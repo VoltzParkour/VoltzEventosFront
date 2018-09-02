@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="06e8c325-d9ad-4125-9467-39ff0bb8f63d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/client/Cart.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/client/Cart.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/client/CartBck.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/client/CartBck.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/models/PaymentDialogs.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/models/PaymentDialogs.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/index.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -28,25 +28,25 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="js" value="4" />
-          <entry key="vue" value="6" />
+          <entry key="vue" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="JavaScript" value="4" />
-          <entry key="Vue.js" value="6" />
+          <entry key="Vue.js" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="js" value="425" />
-          <entry key="vue" value="2461" />
+          <entry key="js" value="653" />
+          <entry key="vue" value="3638" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JavaScript" value="425" />
-          <entry key="Vue.js" value="2461" />
+          <entry key="JavaScript" value="653" />
+          <entry key="Vue.js" value="3638" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts" />
@@ -57,8 +57,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/store/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="44" column="21" selection-start-line="44" selection-start-column="16" selection-end-line="44" selection-end-column="21" />
+            <state relative-caret-position="352">
+              <caret line="63" column="24" lean-forward="true" selection-start-line="63" selection-start-column="24" selection-end-line="63" selection-end-column="34" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
               </folding>
@@ -84,11 +84,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/client/Cart.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="461">
-              <caret line="176" column="43" selection-start-line="176" selection-start-column="43" selection-end-line="176" selection-end-column="43" />
+            <state relative-caret-position="178">
+              <caret line="16" column="53" selection-start-line="16" selection-start-column="53" selection-end-line="16" selection-end-column="53" />
               <folding>
                 <element signature="e#4744#4765#0" expanded="true" />
               </folding>
@@ -96,11 +96,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/client/CartBck.vue">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/models/PaymentDialogs.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="287" column="10" lean-forward="true" selection-start-line="287" selection-start-column="10" selection-end-line="288" selection-end-column="63" />
+            <state relative-caret-position="178">
+              <caret line="712" column="40" lean-forward="true" selection-start-line="712" selection-start-column="40" selection-end-line="712" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -130,8 +130,22 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>foot</find>
-      <find>token</find>
       <find>en</find>
+      <find>sandbox</find>
+      <find>setTransactionInfo</find>
+      <find>cartAmountString</find>
+      <find>transaction</find>
+      <find>transac</find>
+      <find>email</find>
+      <find>requestPayPalCardTransaction</find>
+      <find>selectedEvent</find>
+      <find>compute</find>
+      <find>token</find>
+      <find>R$</find>
+      <find>create</find>
+      <find>clique</find>
+      <find>failure</find>
+      <find>failureMessage</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -144,12 +158,13 @@
         <option value="$PROJECT_DIR$/postcss.config.js" />
         <option value="$PROJECT_DIR$/src/App.vue" />
         <option value="$PROJECT_DIR$/src/components/client/Challenge.vue" />
-        <option value="$PROJECT_DIR$/src/store/index.js" />
         <option value="$PROJECT_DIR$/src/router/index.js" />
         <option value="$PROJECT_DIR$/src/components/client/Detail.vue" />
         <option value="$PROJECT_DIR$/src/components/Home.vue" />
         <option value="$PROJECT_DIR$/src/components/client/CartBck.vue" />
         <option value="$PROJECT_DIR$/src/components/client/Cart.vue" />
+        <option value="$PROJECT_DIR$/src/store/index.js" />
+        <option value="$PROJECT_DIR$/src/components/models/PaymentDialogs.vue" />
       </list>
     </option>
   </component>
@@ -208,6 +223,13 @@
               <item name="VoltzEventosFront" type="b2602c69:ProjectViewProjectNode" />
               <item name="VoltzEventosFront" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="VoltzEventosFront" type="b2602c69:ProjectViewProjectNode" />
+              <item name="VoltzEventosFront" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="router" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -252,12 +274,12 @@
       <option name="presentableId" value="Default" />
       <updated>1535464194477</updated>
       <workItem from="1535464196265" duration="10981000" />
-      <workItem from="1535853653827" duration="1542000" />
+      <workItem from="1535853653827" duration="8503000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12523000" />
+    <option name="totallyTimeSpent" value="19484000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="810" extended-state="6" />
@@ -323,16 +345,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/store/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="44" column="21" selection-start-line="44" selection-start-column="16" selection-end-line="44" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/client/Detail.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="966">
@@ -349,18 +361,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/client/CartBck.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="287" column="10" lean-forward="true" selection-start-line="287" selection-start-column="10" selection-end-line="288" selection-end-column="63" />
+        <state relative-caret-position="295">
+          <caret line="464" column="36" lean-forward="true" selection-start-line="464" selection-end-line="465" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/store/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="63" column="24" lean-forward="true" selection-start-line="63" selection-start-column="24" selection-end-line="63" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/client/Cart.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="461">
-          <caret line="176" column="43" selection-start-line="176" selection-start-column="43" selection-end-line="176" selection-end-column="43" />
+        <state relative-caret-position="178">
+          <caret line="16" column="53" selection-start-line="16" selection-start-column="53" selection-end-line="16" selection-end-column="53" />
           <folding>
             <element signature="e#4744#4765#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/models/PaymentDialogs.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="712" column="40" lean-forward="true" selection-start-line="712" selection-start-column="40" selection-end-line="712" selection-end-column="40" />
         </state>
       </provider>
     </entry>

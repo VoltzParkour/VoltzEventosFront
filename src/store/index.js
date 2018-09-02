@@ -58,9 +58,10 @@ export const store = new Vuex.Store({
                     '\n' +
                     '          O incentivo ao avanço tecnológico, assim como a contínua expansão de nossa atividade causa impacto indireto na reavaliação da gestão inovadora da qual fazemos parte. O cuidado em identificar pontos críticos na determinação clara de objetivos possibilita uma melhor visão global de todos os recursos funcionais envolvidos. A certificação de metodologias que nos auxiliam a lidar com a expansão dos mercados mundiais prepara-nos para enfrentar situações atípicas decorrentes das diretrizes de desenvolvimento para o futuro. No entanto, não podemos esquecer que a execução dos pontos do programa aponta para a melhoria dos procedimentos normalmente adotados. ',
                 price: 12.99,
+                firebaseBranch: 'challenge'
             },
             {
-                title: 'Desafio Voltz Kids',
+                title: 'Voltz Kids',
                 image: 'https://firebasestorage.googleapis.com/v0/b/coloniaferiasvoltz.appspot.com/o/assets%2FVoltzKidsBanner.jpeg?alt=media&token=147da270-ecd6-4719-b5c1-d0e8e73c4ac2',
                 text: 'Por conseguinte, a consulta aos diversos militantes assume importantes posições no estabelecimento dos níveis de motivação departamental. As experiências acumuladas demonstram que o novo modelo estrutural aqui preconizado agrega valor ao estabelecimento do sistema de participação geral. Podemos já vislumbrar o modo pelo qual a constante divulgação das informações pode nos levar a considerar a reestruturação de alternativas às soluções ortodoxas. Evidentemente, a complexidade dos estudos efetuados nos obriga à análise das novas proposições. No mundo atual, a adoção de políticas descentralizadoras estimula a padronização do orçamento setorial. \n' +
                     '\n' +
@@ -76,6 +77,7 @@ export const store = new Vuex.Store({
                     '\n' +
                     '          O incentivo ao avanço tecnológico, assim como a contínua expansão de nossa atividade causa impacto indireto na reavaliação da gestão inovadora da qual fazemos parte. O cuidado em identificar pontos críticos na determinação clara de objetivos possibilita uma melhor visão global de todos os recursos funcionais envolvidos. A certificação de metodologias que nos auxiliam a lidar com a expansão dos mercados mundiais prepara-nos para enfrentar situações atípicas decorrentes das diretrizes de desenvolvimento para o futuro. No entanto, não podemos esquecer que a execução dos pontos do programa aponta para a melhoria dos procedimentos normalmente adotados. ',
                 price: 32.33,
+                firebaseBranch: 'kids'
             }
         ],
         selectedEvent: {},
@@ -192,6 +194,14 @@ export const store = new Vuex.Store({
         //     }
         // },
         //
+
+        createEventParticipant({commit, getters}, payload) {
+            payload.userData.transaction_code = payload.paymentCode
+            payload.userData.transaction_status = 'aguardando confirmação'
+            let path = 'events/' + getters.selectedEvent.firebaseBranch +'/' + payload.paymentCode
+            firebase.database().ref(path).set(payload.userData)
+        },
+
         // createColonyParticipantTemporary({commit, getters}, payload) {
         //     const user = {
         //         name: payload.userData.name,
