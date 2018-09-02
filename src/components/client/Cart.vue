@@ -32,7 +32,12 @@
                 </v-card>
 
                 <v-card class="pa-3">
-                    <form>
+                    <v-card-title>
+                        <span class="headline">
+                            Formulário de Inscrição
+                        </span>
+                    </v-card-title>
+                    <form class="ml-4">
                         <v-text-field
                                 v-validate="'required'"
                                 v-model="name"
@@ -97,6 +102,7 @@
                     </form>
                 </v-card>
             </v-flex>
+            <PaymentDialogs @paymentRequested="processRequest"></PaymentDialogs>
         </v-layout>
     </v-container>
 </template>
@@ -104,6 +110,8 @@
 <script>
     import Vue from 'vue'
     import VeeValidate from 'vee-validate'
+    import PaymentDialogs from '../models/PaymentDialogs'
+
 
     Vue.use(VeeValidate)
 
@@ -113,6 +121,9 @@
         },
 
         name: "Cart",
+        components: {
+            PaymentDialogs,
+        },
 
         computed: {
             selectedEvent() {
@@ -162,16 +173,69 @@
 
         methods: {
             submit() {
-                this.$validator.validateAll()
+                this.$validator.validateAll().then((onFulfilled) => {
+                    console.log(onFulfilled)
+                    if (onFulfilled) {
+                        // this.$store.dispatch('setTransactionInfo', payload)
+                        this.$store.dispatch('setPaymentOptionsDialog', true)
+                    }
+                })
             },
-            clear() {
-                this.name = ''
-                this.email = ''
-                this.select = null
-                this.checkbox = null
-                this.$validator.reset()
-            }
-        },
+            processRequest(data) {
+                let responsable = {
+                    name_resp: this.responsable.name,
+                    cpf: this.responsable.cpf,
+                    tel: this.responsable.tel,
+                    celphone: this.responsable.cel,
+                    email: this.responsable.email
+                }
+                let days = []
+                let colonyId = []
+
+                for (let j = 0; j < this.$store.getters.cart.length; j++) {//Fazer esses loops mais eficientes! Vai muitas vezes no getters!!
+
+                    for (let i = 0; i < this.$store.getters.cart[j].dates.length; i++) {
+                        let turno = ''
+                        let afternoon = false
+                        let morning = false
+
+                        if (this.$store.getters.cart[j].dates[i].turno === 'Manhã') {
+                            turno = 'manha'
+                            morning = true
+                        } else if (this.$store.getters.cart[j].dates[i].turno === 'Tarde') {
+                            turno = 'tarde'
+                            afternoon = true
+                        }
+
+                        let day = this.$store.getters.cart[j].dates[i].date.getUTCDate() > 9 ? this.$store.getters.cart[j].dates[i].date.getUTCDate() : '0' + this.$store.getters.cart[j].dates[i].date.getUTCDate()
+                        let month = (this.$store.getters.cart[j].dates[i].date.getUTCMonth() + 1) > 9 ? (this.$store.getters.cart[j].dates[i].date.getUTCMonth() + 1) : '0' + (this.$store.getters.cart[j].dates[i].date.getUTCMonth() + 1)
+                        let DateStr = this.$store.getters.cart[j].dates[i].date.getUTCFullYear() + '-' + month + '-' + day
+
+                        days.push({
+                            day: DateStr,
+                            turno: turno,
+                            afternoon: afternoon,
+                            morning: morning
+                        })
+                    }
+                    let userData = {
+                        name: this.$store.getters.cart[j].selectedUser.name,
+                        age: this.$store.getters.cart[j].selectedUser.age,
+                        healthInsurance: this.$store.getters.cart[j].selectedUser.healthInsurance,
+                        responsable: responsable,
+                        days: days,
+                        colonyId: this.$store.getters.cart[j].colonyId
+                    }
+                    this.$store.dispatch('createColonyParticipantTemporary', {
+                        userData: userData,
+                        paymentCode: data.code
+                    })
+
+                    //days.splice(0, this.$store.getters.cart[j].dates.length)
+
+                }
+            },
+        }
 
     }
 </script>

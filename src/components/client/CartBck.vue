@@ -317,19 +317,10 @@
         for (let i = 0; i < this.cart.length - 1; i++) {
           for (let j = i + 1; j < this.cart.length; j++) {
             if (this.cart[i].selectedUser.name === this.cart[j].selectedUser.name) {
-              console.log('nome do dito cujo')
-              console.log(this.cart[i].selectedUser.name)
-              console.log(this.cart[j].selectedUser.name)
               for (let k = 0; k < this.cart[i].dates.length; k++) {
                 for (let l = 0; l <  this.cart[j].dates.length; l++) {
                   let firstDay = new Date(this.cart[i].dates[k].date)
                   let secondDay = new Date(this.cart[j].dates[l].date)
-                  console.log(firstDay)
-                  console.log(secondDay)
-                  console.log(firstDay.getTime() === secondDay.getTime())
-                  console.log(this.cart[i].dates[k].turno)
-                  console.log(this.cart[j].dates[l].turno)
-                  console.log(this.cart[i].dates[k].turno === this.cart[j].dates[l].turno)
                   if (firstDay.getTime() === secondDay.getTime() &&
                     this.cart[i].dates[k].turno === this.cart[j].dates[l].turno) {
                     console.log('entrou')
