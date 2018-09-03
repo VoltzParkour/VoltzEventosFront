@@ -76,7 +76,7 @@ export const store = new Vuex.Store({
                     '          Todas estas questões, devidamente ponderadas, levantam dúvidas sobre se a consolidação das estruturas acarreta um processo de reformulação e modernização das condições inegavelmente apropriadas. É claro que o aumento do diálogo entre os diferentes setores produtivos cumpre um papel essencial na formulação do investimento em reciclagem técnica. A prática cotidiana prova que o desenvolvimento contínuo de distintas formas de atuação exige a precisão e a definição dos relacionamentos verticais entre as hierarquias. \n' +
                     '\n' +
                     '          O incentivo ao avanço tecnológico, assim como a contínua expansão de nossa atividade causa impacto indireto na reavaliação da gestão inovadora da qual fazemos parte. O cuidado em identificar pontos críticos na determinação clara de objetivos possibilita uma melhor visão global de todos os recursos funcionais envolvidos. A certificação de metodologias que nos auxiliam a lidar com a expansão dos mercados mundiais prepara-nos para enfrentar situações atípicas decorrentes das diretrizes de desenvolvimento para o futuro. No entanto, não podemos esquecer que a execução dos pontos do programa aponta para a melhoria dos procedimentos normalmente adotados. ',
-                price: 32.33,
+                price: 100.00,
                 firebaseBranch: 'kids'
             }
         ],
