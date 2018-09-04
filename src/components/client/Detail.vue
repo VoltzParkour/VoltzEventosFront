@@ -8,7 +8,7 @@
                 <v-card class="mt-3">
                     <v-card-title class="display-2 grey--text">{{ selectedEvent.title }}</v-card-title>
 
-                    <v-card-text>{{ selectedEvent.text }}</v-card-text>
+                    <v-card-text v-html="selectedEvent.text"></v-card-text>
                 </v-card>
 
                 <v-card>
@@ -17,7 +17,7 @@
                         <!--<span class="primary&#45;&#45;text display-1"> {{selectedEvent.price}} </span>-->
                     <!--</v-card-text>-->
                         <v-btn class="primary ma-3" @click.native="$router.push('/carrinho')">
-                            Inscrever-se agora
+                            Inscrever-se Aqui!!
                         </v-btn>
                 </v-card>
             </v-flex>

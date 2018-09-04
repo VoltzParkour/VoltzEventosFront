@@ -33,7 +33,7 @@
                     return;
                 }
                 this.$store.dispatch('setSelectedEvent', event)
-                this.$router.push('/carrinho')
+                this.$router.push('/detalhes')
             }
         }
     }

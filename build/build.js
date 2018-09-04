@@ -25,7 +25,7 @@ rm(path.join(config.build.assetsRoot, config.build.assetsSubDirectory), err => {
       children: false, // If you are using ts-loader, setting this to true will make TypeScript errors show up during build.
       chunks: false,
       chunkModules: false
-    }) + '\n\n')
+    }) + '<br/><br/>')
 
     if (stats.hasErrors()) {
       console.log(chalk.red('  Build failed with errors.\n'))
