@@ -439,10 +439,15 @@
                 paymentResult: false,
                 resultText: 'Processando Pagamento',
                 card: {
-                    number: '4111111111111111',
-                    cvc: '333',
-                    expiration: '0519',
-                    name: 'JOAO DA SILVA',
+                    // number: '4111111111111111',
+                    // cvc: '333',
+                    // expiration: '0519',
+                    // name: 'JOAO DA SILVA',
+                    // street: ''
+                    number: '',
+                    cvc: '',
+                    expiration: '',
+                    name: '',
                     street: ''
                 },
                 cardHolder: null,
@@ -746,7 +751,7 @@
                 let payload = {
                     hash: this.$store.getters.hash,
                     token: this.token,
-                    email: 'luisfnicolau@sandbox.pagseguro.com.br',
+                    email: info.email,
                     name: this.card.name,
                     phone_code: info.cel.substring(0, 2),
                     phone: info.cel.substring(2, info.cel.length),

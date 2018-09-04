@@ -47,14 +47,14 @@
                                 data-vv-name="name"
                                 required
                         ></v-text-field>
-                        <!--<v-text-field-->
-                                <!--v-validate="'required|email'"-->
-                                <!--v-model="email"-->
-                                <!--:error-messages="errors.collect('email')"-->
-                                <!--label="E-mail"-->
-                                <!--data-vv-name="email"-->
-                                <!--required-->
-                        <!--&gt;</v-text-field>-->
+                        <v-text-field
+                                v-validate="'required|email'"
+                                v-model="email"
+                                :error-messages="errors.collect('email')"
+                                label="E-mail"
+                                data-vv-name="email"
+                                required
+                        ></v-text-field>
                         <v-text-field
                                 v-validate="'required'"
                                 v-model="address"
@@ -131,7 +131,6 @@
             }
         },
         beforeMount() {
-            console.log(this.$store.getters.selectedEvent)
             if (Object.keys(this.$store.getters.selectedEvent).length === 0) {
                 this.$router.push('/')
             }
@@ -187,8 +186,6 @@
                 })
             },
             processRequest(data) {
-                console.log('payment')
-                console.log(data)
                 let userData = {
                     email: this.email,
                     name: this.name,
