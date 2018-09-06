@@ -14,6 +14,7 @@
                             <v-card-media>
                                 <img height="300px" width="600px" :src="event.image"/>
                             </v-card-media>
+                            <v-card-title class="headline">{{ event.title }}</v-card-title>
                         </v-flex>
                     </v-card>
                 </v-layout>
