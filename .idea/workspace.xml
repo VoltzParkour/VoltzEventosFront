@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="06e8c325-d9ad-4125-9467-39ff0bb8f63d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/client/Cart.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/client/Cart.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/client/Detail.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/client/Detail.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/models/PaymentDialogs.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/models/PaymentDialogs.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/index.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -100,8 +95,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/models/PaymentDialogs.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="391" column="58" selection-start-line="391" selection-start-column="58" selection-end-line="391" selection-end-column="58" />
+            <state relative-caret-position="245">
+              <caret line="495" column="54" lean-forward="true" selection-start-line="495" selection-start-column="54" selection-end-line="495" selection-end-column="54" />
             </state>
           </provider>
         </entry>
@@ -298,12 +293,12 @@
       <workItem from="1535996334290" duration="164000" />
       <workItem from="1536099955612" duration="425000" />
       <workItem from="1536101271049" duration="1138000" />
-      <workItem from="1536174108343" duration="5122000" />
+      <workItem from="1536174108343" duration="5206000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26930000" />
+    <option name="totallyTimeSpent" value="27014000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="805" extended-state="6" />
@@ -415,8 +410,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/models/PaymentDialogs.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="391" column="58" selection-start-line="391" selection-start-column="58" selection-end-line="391" selection-end-column="58" />
+        <state relative-caret-position="245">
+          <caret line="495" column="54" lean-forward="true" selection-start-line="495" selection-start-column="54" selection-end-line="495" selection-end-column="54" />
         </state>
       </provider>
     </entry>
