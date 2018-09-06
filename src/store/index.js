@@ -75,21 +75,157 @@ export const store = new Vuex.Store({
                     'Rua Lopes Quintas, 274, Jardim Botânico, Rio de Janeiro, RJ.<br/>' +
                     'Galpão localizado dentro do Colégio Divina Providência<br/>' +
                     '<br/>' +
-                    'Clique aqui para se inscrever.<br/>' +
                     '<br/>' +
                     'Venha participar do Desafio Voltz Kids com oficinas de parkour, street dance, freerunning, slackline, acrobacia aérea e trampolim.<br/>' +
+                    'Oficinas vendidas separadamente.<br/>' +
                     '<br/>' +
                     'Além de muita diversão na competição infantil e infanto-juvenil.<br/>' +
                     '<br/>' +
                     'ATÉ 15 anos de idade.<br/>' +
                     '<br/>' +
-                    'Se você te mais de 15 anos não desanime, você pode participar do Desafio Voltz Parkour 2018.<br/>' +
+                    'Se você tem mais de 15 anos não desanime, você pode participar do Desafio Voltz Parkour 2018.<br/>' +
                     '<br/>' +
                     'As inscrições também podem ser feitas no local<br/>' +
                     '<br/>' +
                     'Venha participar !',
                 price: 100.00,
-                firebaseBranch: 'kids'
+                firebaseBranch: 'kids',
+                props: {
+                    'name': {
+                        required: 'required',
+                        label: 'Nome',
+                        type: 'text',
+                        value: ''
+                    },
+                    'email': {
+                        required: 'required',
+                        label: 'Email',
+                        type: 'text',
+                        value: ''
+                    },
+                    'address': {
+                        required: 'required',
+                        label: 'Endereço',
+                        type: 'text',
+                        value: ''
+                    },
+                    'telephone': {
+                        required: 'required',
+                        label: 'Telefone',
+                        type: 'text',
+                        mask: '(##)#####-####',
+                        value: ''
+                    },
+                    'cpf': {
+                        required: 'required',
+                        label: 'CPF',
+                        type: 'text',
+                        mask: '###.###.###-##',
+                        value: ''
+                    },
+                    'questionOne': {
+                        required: '',
+                        label: 'Como conheceu o Parkour',
+                        type: 'text',
+                        value: ''
+                    },
+                    'questionTwo': {
+                        required: '',
+                        label: 'Você faz aula de parkour? Onde?',
+                        type: 'text',
+                        value: ''
+                    },
+                    'modality': {
+                        required: 'required',
+                        label: 'Modalidade',
+                        type: 'list',
+                        options: ['Speed'],
+                        value: ''
+                    },
+                }
+            },
+            {
+                title: 'Oficina Voltz Kids 2018',
+                image: 'https://firebasestorage.googleapis.com/v0/b/coloniaferiasvoltz.appspot.com/o/assets%2FLogoVoltzKids-2-min.jpg?alt=media&token=25869753-38d7-4e75-97cf-13ae5125061f',
+                text: 'Está chegando a grande dia da Oficina Voltz Kids, dia 12 de outubro.<br/>' +
+                    '<br/>' +
+                    'As inscrições já estão abertas. Sendo aluno ou não da Voltz você pode participar!<br/>' +
+                    '<br/>' +
+                    'Data da oficina:<br/>' +
+                    'Sexta, dia 12 de outubro de 2018<br/>' +
+                    'Horário: das 09h às 12h50<br/>' +
+                    '<br/>' +
+                    'Local: ESPAÇO VOLTZ PARKOUR<br/>' +
+                    'Rua Lopes Quintas, 274, Jardim Botânico, Rio de Janeiro, RJ.<br/>' +
+                    'Galpão localizado dentro do Colégio Divina Providência<br/>' +
+                    '<br/>' +
+                    '<br/>' +
+                    'Venha participar da Oficina de parkour, street dance, freerunning, slackline, acrobacia aérea e trampolim.<br/>' +
+                    '<br/>' +
+                    'Além de muita diversão na competição infantil e infanto-juvenil.<br/>' +
+                    '<br/>' +
+                    'ATÉ 15 anos de idade.<br/>' +
+                    '<br/>' +
+                    'Se você tem mais de 15 anos não desanime, você pode participar do Desafio Voltz Parkour 2018.<br/>' +
+                    '<br/>' +
+                    'As inscrições também podem ser feitas no local<br/>' +
+                    '<br/>' +
+                    'Venha participar !',
+                price: 30.00,
+                firebaseBranch: 'oficina',
+                props: {
+                    'name': {
+                        required: 'required',
+                        label: 'Nome',
+                        type: 'text',
+                        value: ''
+                    },
+                    'email': {
+                        required: 'required',
+                        label: 'Email',
+                        type: 'text',
+                        value: ''
+                    },
+                    'address': {
+                        required: 'required',
+                        label: 'Endereço',
+                        type: 'text',
+                        value: ''
+                    },
+                    'telephone': {
+                        required: 'required',
+                        label: 'Telefone',
+                        type: 'text',
+                        mask: '(##)#####-####',
+                        value: ''
+                    },
+                    'cpf': {
+                        required: 'required',
+                        label: 'CPF',
+                        type: 'text',
+                        mask: '###.###.###-##',
+                        value: ''
+                    },
+                    'questionOne': {
+                        required: '',
+                        label: 'Como conheceu o Parkour',
+                        type: 'text',
+                        value: ''
+                    },
+                    'questionTwo': {
+                        required: '',
+                        label: 'Você faz aula de parkour? Onde?',
+                        type: 'text',
+                        value: ''
+                    },
+                    'time': {
+                        required: 'required',
+                        label: 'Horário (Duração de 50 minutos)',
+                        type: 'list',
+                        options: ['9:00', '10:00', '11:00', '12:00'],
+                        value: ''
+                    },
+                }
             }
         ],
         selectedEvent: {},

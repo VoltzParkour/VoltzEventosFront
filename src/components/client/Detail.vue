@@ -2,7 +2,7 @@
     <v-container text-xs-center>
         <v-layout row wrap>
             <v-flex xs12>
-                <img :src="getImageByEvent(selectedEvent)">
+                <img height="300px" width="600px" :src="getImageByEvent(selectedEvent)">
             </v-flex>
             <v-flex xs12>
                 <v-card class="mt-3">

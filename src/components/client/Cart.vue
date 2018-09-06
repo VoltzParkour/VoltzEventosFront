@@ -38,66 +38,92 @@
                         </span>
                     </v-card-title>
                     <form class="ml-4">
-                        <v-text-field
-                                v-validate="'required'"
-                                v-model="name"
-                                :counter="10"
-                                :error-messages="errors.collect('name')"
-                                label="Nome"
-                                data-vv-name="name"
-                                required
-                        ></v-text-field>
-                        <v-text-field
-                                v-validate="'required|email'"
-                                v-model="email"
-                                :error-messages="errors.collect('email')"
-                                label="E-mail"
-                                data-vv-name="email"
-                                required
-                        ></v-text-field>
-                        <v-text-field
-                                v-validate="'required'"
-                                v-model="address"
-                                label="Endereco"
-                                data-vv-name="endereco"
-                                required
-                        ></v-text-field>
-                        <v-text-field
-                                v-validate="'required'"
-                                v-model="telephone"
-                                label="Telefone"
-                                mask="(##)#####-####"
-                                data-vv-name="telefone"
-                                required
-                        ></v-text-field>
-                        <v-text-field
-                                v-validate="'required'"
-                                v-model="cpf"
-                                label="CPF"
-                                mask="###.###.###-##"
-                                data-vv-name="cpf"
-                                required
-                        ></v-text-field>
-                        <v-text-field
-                                v-model="questionOne"
-                                label="Como conheceu o Parkour"
-                                data-vv-name="questionOne"
-                        ></v-text-field>
-                        <v-text-field
-                                v-model="questionTwo"
-                                label="Você faz aula de Parkour? Onde?"
-                                data-vv-name="questionTwo"
-                        ></v-text-field>
-                        <v-select
-                                v-validate="'required'"
-                                :items="items"
-                                v-model="select"
-                                :error-messages="errors.collect('select')"
-                                label="Modalidade"
-                                data-vv-name="select"
-                                required
-                        ></v-select>
+                        <v-flex xs12
+                                v-for="(prop, key) in selectedEvent.props"
+                        >
+                            <v-text-field
+                                    v-if="prop.type === 'text'"
+                                    :v-validate="prop.required"
+                                    v-model="prop.value"
+                                    :error-messages="errors.collect(key)"
+                                    :data-vv-name=key
+                                    :label="prop.label"
+                                    :mask="prop.mask"
+                                    :required="prop.required != '' ? true : false"
+                            ></v-text-field>
+                            <v-select
+                                    v-if="prop.type === 'list'"
+                                    v-validate="prop.required"
+                                    :items="prop.options"
+                                    v-model="prop.value"
+                                    :error-messages="errors.collect(key)"
+                                    :label="prop.label"
+                                    :data-vv-name="key"
+                                    :required="prop.required != '' ? true : false"
+                            ></v-select>
+                        </v-flex>
 
+                        <!--<v-text-field-->
+                        <!--v-validate="'required'"-->
+                        <!--v-model="name"-->
+                        <!--:counter="10"-->
+                        <!--:error-messages="errors.collect('name')"-->
+                        <!--label="Nome"-->
+                        <!--data-vv-name="name"-->
+                        <!--required-->
+                        <!--&gt;</v-text-field>-->
+                        <!--<v-text-field-->
+                        <!--v-validate="'required|email'"-->
+                        <!--v-model="email"-->
+                        <!--:error-messages="errors.collect('email')"-->
+                        <!--label="E-mail"-->
+                        <!--data-vv-name="email"-->
+                        <!--required-->
+                        <!--&gt;</v-text-field>-->
+                        <!--<v-text-field-->
+                        <!--v-validate="'required'"-->
+                        <!--v-model="address"-->
+                        <!--label="Endereco"-->
+                        <!--data-vv-name="endereco"-->
+                        <!--required-->
+                        <!--&gt;</v-text-field>-->
+                        <!--<v-text-field-->
+                        <!--v-validate="'required'"-->
+                        <!--v-model="telephone"-->
+                        <!--label="Telefone"-->
+                        <!--mask="(##)#####-####"-->
+                        <!--data-vv-name="telefone"-->
+                        <!--required-->
+                        <!--&gt;</v-text-field>-->
+                        <!--<v-text-field-->
+                        <!--v-validate="'required'"-->
+                        <!--v-model="cpf"-->
+                        <!--label="CPF"-->
+                        <!--mask="###.###.###-##"-->
+                        <!--data-vv-name="cpf"-->
+                        <!--required-->
+                        <!--&gt;</v-text-field>-->
+                        <!--<v-text-field-->
+                        <!--v-model="questionOne"-->
+                        <!--label="Como conheceu o Parkour"-->
+                        <!--data-vv-name="questionOne"-->
+                        <!--&gt;</v-text-field>-->
+                        <!--<v-text-field-->
+                        <!--v-model="questionTwo"-->
+                        <!--label="Você faz aula de Parkour? Onde?"-->
+                        <!--data-vv-name="questionTwo"-->
+                        <!--&gt;</v-text-field>-->
+                        <!--<v-select-->
+                        <!--v-validate="'required'"-->
+                        <!--:items="items"-->
+                        <!--v-model="select"-->
+                        <!--:error-messages="errors.collect('select')"-->
+                        <!--label="Modalidade"-->
+                        <!--data-vv-name="select"-->
+                        <!--required-->
+                        <!--&gt;</v-select>-->
+
+                        <h5 class="grey--text">*Campos Obrigatórios</h5>
                         <v-btn @click="submit" class="primary">Continuar para o Pagamento</v-btn>
                     </form>
                 </v-card>
@@ -137,12 +163,12 @@
         },
 
         data: () => ({
-            name: '',
-            email: '',
-            select: null,
-            items: [
-                'Speed'
-            ],
+            // name: '',
+            // email: '',
+            // select: null,
+            // items: [
+            //     'Speed'
+            // ],
             checkbox: null,
             dictionary: {
                 attributes: {
@@ -154,16 +180,16 @@
                         required: () => 'Nome não pode ser vazio',
                         // custom messages
                     },
-                    select: {
-                        required: 'Select field is required'
+                    modality: {
+                        required: 'Escolha a modalidade'
                     }
                 }
             },
-            address: '',
-            telephone: '',
-            cpf: '',
-            questionOne: '',
-            questionTwo: ''
+            // address: '',
+            // telephone: '',
+            // cpf: '',
+            // questionOne: '',
+            // questionTwo: ''
         }),
 
         mounted() {
@@ -174,26 +200,20 @@
             submit() {
                 this.$validator.validateAll().then((onFulfilled) => {
                     if (onFulfilled) {
-                        let payload = {
-                            email: this.email,
-                            name: this.name,
-                            cel: this.telephone,
-                            cpf: this.cpf
+                        let payload = {}
+                        for (let prop in this.selectedEvent.props) {
+                            payload[prop] = this.selectedEvent.props[prop].value
                         }
+                        console.log(payload)
                         this.$store.dispatch('setTransactionInfo', payload)
                         this.$store.dispatch('setPaymentOptionsDialog', true)
                     }
                 })
             },
             processRequest(data) {
-                let userData = {
-                    email: this.email,
-                    name: this.name,
-                    telephone: this.telephone,
-                    cpf: this.cpf,
-                    address: this.address,
-                    questionOne: this.questionOne,
-                    questionTwo: this.questionTwo
+                let userData = {}
+                for (let prop in this.selectedEvent.props) {
+                    userData[prop] = this.selectedEvent.props[prop].value
                 }
                 this.$store.dispatch('createEventParticipant', {userData: userData, paymentCode: data.code})
             },

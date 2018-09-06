@@ -6,11 +6,14 @@
                     <v-card ripple
                             class="ma-3"
                             v-for="event in events"
+                            width="600px"
                             @click.native="onEventClick(event)"
                     >
-                        <v-flex xs6>
+                        <v-flex xs12>
                             <!--<plan-card :colony="colony" :plan="plan"></plan-card>-->
-                            <img :src="event.image"/>
+                            <v-card-media>
+                                <img height="300px" width="600px" :src="event.image"/>
+                            </v-card-media>
                         </v-flex>
                     </v-card>
                 </v-layout>
@@ -22,13 +25,13 @@
 <script>
     export default {
         computed: {
-          events() {
-              return this.$store.getters.events
-          }
+            events() {
+                return this.$store.getters.events
+            }
         },
         methods: {
             onEventClick(event) {
-                if (event.title === 'Desafio Voltz Challenge' ) {
+                if (event.title === 'Desafio Voltz Challenge') {
                     window.location.href = 'https://docs.google.com/forms/d/1ewSEZdP34jgvA4GG6sUrLJZ0ukEDsn_BFsIkZgOtbeo';
                     return;
                 }

@@ -389,7 +389,7 @@
                         <v-slide-x-transition>
                             <v-card-text v-if="paymentResult">
                                 <v-flex xs12>
-                                    <span class="display-1">Parabéns!!<br/> Sua inscrição foi realizada, agora você so precisa levar no dia do evento um documento com foto. <br/>Boa Sorte!!!</span>
+                                    <span class="display-0">Parabéns!!<br/> Sua inscrição foi realizada, agora você so precisa levar no dia do evento um documento com foto. <br/>Boa Sorte!!!</span>
                                     <!--<a-->
                                             <!--href="https://firebasestorage.googleapis.com/v0/b/coloniaferiasvoltz.appspot.com/o/termo_adesao_colonia_ferias.pdf?alt=media&token=7615d77e-a90d-4e8f-919a-e743d5dc004c">Clique-->
                                         <!--aqui para imprimir seu contrato</a>-->
@@ -753,8 +753,8 @@
                     token: this.token,
                     email: info.email,
                     name: this.card.name,
-                    phone_code: info.cel.substring(0, 2),
-                    phone: info.cel.substring(2, info.cel.length),
+                    phone_code: info.telephone.substring(0, 2),
+                    phone: info.telephone.substring(2, info.telephone.length),
                     cpf: this.card.cpf,
                     amount: cartAmountString,
                     card_holder_name: this.card.name,
@@ -768,6 +768,7 @@
                     complement: this.card.complement,
                     description: this.selectedEvent.title
                 }
+                console.log(payload)
 
                 this.$store.dispatch('requestPayPalCardTransaction', payload).then(
                     response => {
