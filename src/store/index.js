@@ -171,7 +171,7 @@ export const store = new Vuex.Store({
                     'As inscrições também podem ser feitas no local<br/>' +
                     '<br/>' +
                     'Venha participar !',
-                price: 3.00,
+                price: 30.00,
                 firebaseBranch: 'oficina',
                 props: {
                     'name': {
