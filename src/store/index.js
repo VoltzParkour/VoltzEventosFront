@@ -182,7 +182,7 @@ export const store = new Vuex.Store({
                     },
                     'email': {
                         required: 'required',
-                        label: 'Email',
+                        label: 'Email (Do participante ou responsável)',
                         type: 'text',
                         value: ''
                     },
