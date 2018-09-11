@@ -42,7 +42,7 @@ export const store = new Vuex.Store({
         //events
         events: [
             {
-                title: 'Desafio Voltz Challenge',
+                title: 'Desafio Voltz',
                 image: 'https://firebasestorage.googleapis.com/v0/b/coloniaferiasvoltz.appspot.com/o/assets%2FVoltzChallengeBanner.jpeg?alt=media&token=f5efb8fc-e135-409e-a159-f5eb08b5d952',
                 text: 'Por conseguinte, a consulta aos diversos militantes assume importantes posições no estabelecimento dos níveis de motivação departamental. As experiências acumuladas demonstram que o novo modelo estrutural aqui preconizado agrega valor ao estabelecimento do sistema de participação geral. Podemos já vislumbrar o modo pelo qual a constante divulgação das informações pode nos levar a considerar a reestruturação de alternativas às soluções ortodoxas. Evidentemente, a complexidade dos estudos efetuados nos obriga à análise das novas proposições. No mundo atual, a adoção de políticas descentralizadoras estimula a padronização do orçamento setorial. <br/>' +
                     '<br/>' +
