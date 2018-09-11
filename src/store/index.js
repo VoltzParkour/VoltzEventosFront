@@ -99,7 +99,7 @@ export const store = new Vuex.Store({
                     },
                     'email': {
                         required: 'required',
-                        label: 'Email',
+                        label: 'Email (Do participante ou responsável)',
                         type: 'text',
                         value: ''
                     },
@@ -236,8 +236,12 @@ export const store = new Vuex.Store({
         payment_options_dialog: false,
         transaction: null,
         test: null,
+        participants: {}
     },
     mutations: {
+        setEventsParticipants(state, payload) {
+            state.participants = payload
+        },
         // addColony(state, payload) {
         //     state.colonies.push(payload)
         // },
@@ -416,39 +420,40 @@ export const store = new Vuex.Store({
         // },
         //
         //
-        // LoadColonies({commit}) {
-        //     // firebase.database().ref('Colonies').on('value')
-        //     firebase.database().ref('Colonies').once('value')
-        //         .then(
-        //             (data) => {
-        //                 const colonies = []
-        //                 const obj = data.val()
-        //                 for (let key in obj) {
-        //                     colonies.push({
-        //                         id: key,
-        //                         title: obj[key].title,
-        //                         description: obj[key].description,
-        //                         start_date: obj[key].start_date,
-        //                         end_date: obj[key].end_date,
-        //                         plans: obj[key].plans,
-        //                         week_days: obj[key].week_days,
-        //                         days: obj[key].Days,
-        //                         capacity: obj[key].capacity,
-        //                         active: true,
-        //                         sellStart: obj[key].sellStart,
-        //                         sellEnd: obj[key].sellEnd
-        //                     })
-        //                 }
-        //                 commit('setColonies', colonies)
-        //                 // .filter(new Date(sellStart) >= today && new Date(sellEnd) >= today )
-        //             }
-        //         )
-        //         .catch(
-        //             (error) => {
-        //                 console.log(error)
-        //             }
-        //         )
-        // },
+        LoadEventsParticipants({commit}) {
+            // firebase.database().ref('Colonies').on('value')
+            firebase.database().ref('events').once('value')
+                .then(
+                    (data) => {
+                        // const colonies = []
+                        // const obj = data.val()
+                        // for (let key in obj) {
+                        //     colonies.push({
+                        //         id: key,
+                        //         title: obj[key].title,
+                        //         description: obj[key].description,
+                        //         start_date: obj[key].start_date,
+                        //         end_date: obj[key].end_date,
+                        //         plans: obj[key].plans,
+                        //         week_days: obj[key].week_days,
+                        //         days: obj[key].Days,
+                        //         capacity: obj[key].capacity,
+                        //         active: true,
+                        //         sellStart: obj[key].sellStart,
+                        //         sellEnd: obj[key].sellEnd
+                        //     })
+                        // }
+                        console.log(data.val())
+                        commit('setEventsParticipants', data.val())
+                        // .filter(new Date(sellStart) >= today && new Date(sellEnd) >= today )
+                    }
+                )
+                .catch(
+                    (error) => {
+                        console.log(error)
+                    }
+                )
+        },
         // LoadColonyParticipants({commit, getters}) {
         //     firebase.database().ref('colony_buyers').child(getters.selectedColony.id).once('value')
         //         .then(
@@ -696,6 +701,9 @@ export const store = new Vuex.Store({
         },
         estates(state) {
             return state.estates
+        },
+        participants(state) {
+            return state.participants
         },
         // kids(state) {
         //     return state.kids

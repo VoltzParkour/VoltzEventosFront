@@ -34,7 +34,7 @@
                 <v-card class="pa-3">
                     <v-card-title>
                         <span class="headline">
-                            Formulário de Inscrição
+                            Dados do Participante
                         </span>
                     </v-card-title>
                     <form class="ml-4">

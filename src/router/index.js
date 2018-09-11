@@ -2,12 +2,12 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/components/Home'
 import Detail from '@/components/client/Detail'
-// import AdminHome from '@/components/admin/Home'
+import AdminHome from '@/components/admin/Home'
 // import ColonyForm from '@/components/admin/ColonyForm'
 // import AdminAddForm from '@/components/admin/AdminAddForm'
 // import AdminSelectPlans from '@/components/admin/AdminSelectPlans'
 // import Colony from '@/components/admin/Colony'
-// import Login from '@/components/login/login'
+import Login from '@/components/login/login'
 import Cart from '@/components/client/Cart'
 import * as firebase from 'firebase'
 
@@ -27,14 +27,14 @@ let router = new Router({
             name: 'Detail',
             component: Detail
         },
-        // {
-        //   path: '/admin',
-        //   name: 'Admin',
-        //   component: AdminHome,
-        //   meta: {
-        //     requiresAuth: true
-        //   }
-        // },
+        {
+          path: '/admin',
+          name: 'Admin',
+          component: AdminHome,
+          meta: {
+            requiresAuth: true
+          }
+        },
         // {
         //   path: '/colony_form',
         //   name: 'ColonyForm',
@@ -64,11 +64,11 @@ let router = new Router({
         //   name: 'Colony',
         //   component: Colony
         // },
-        // {
-        //   path: '/login',
-        //   name: 'Login',
-        //   component: Login
-        // },
+        {
+          path: '/login',
+          name: 'Login',
+          component: Login
+        },
         {
           path: '/carrinho',
           name: 'Cart',

@@ -123,10 +123,10 @@
     <v-footer :fixed="fixed" app class="primaryt">
       <span class="ml-3">  Voltz&copy; 2018</span>
       <v-spacer></v-spacer>
-      <!--<v-btn small flat @click.stop="goAdmin" class="primary" light>-->
-        <!--<v-icon>account_circle</v-icon>-->
-        <!--<v-card-text>ADMIN</v-card-text>-->
-      <!--</v-btn>-->
+      <v-btn small flat @click.stop="goAdmin" class="primary" light>
+        <v-icon>account_circle</v-icon>
+        <v-card-text>ADMIN</v-card-text>
+      </v-btn>
     </v-footer>
   </v-app>
 </template>
