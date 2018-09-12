@@ -32,7 +32,7 @@
         },
         methods: {
             onEventClick(event) {
-                if (event.title === 'Desafio Voltz Challenge') {
+                if (event.title === 'Desafio Voltz') {
                     window.location.href = 'https://docs.google.com/forms/d/1ewSEZdP34jgvA4GG6sUrLJZ0ukEDsn_BFsIkZgOtbeo';
                     return;
                 }
