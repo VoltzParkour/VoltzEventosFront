@@ -443,7 +443,6 @@ export const store = new Vuex.Store({
                         //         sellEnd: obj[key].sellEnd
                         //     })
                         // }
-                        console.log(data.val())
                         commit('setEventsParticipants', data.val())
                         // .filter(new Date(sellStart) >= today && new Date(sellEnd) >= today )
                     }

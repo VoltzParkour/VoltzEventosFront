@@ -1,39 +1,40 @@
 <template>
     <v-slide-y-transition mode="out-in">
         <v-container fluid>
-            <v-card>
+            <v-card class="ma-3" v-for="(event, index) in participants">
+                <v-card-title>{{index.toUpperCase()}}</v-card-title>
                 <v-expansion-panel>
-                    <v-expansion-panel-content v-for="date in ArrayOfDays" @click="$refs[modal.ref].open()" :key="date">
-                        <div slot="header">{{ date.substring(7, date.length) }} de {{ dateGetMonth(date) |
-                            monthNameFilter }} de {{
-                            date.substring(0, 4)}}
+                    <v-expansion-panel-content v-for="(participant, index) in event" @click="$refs[modal.ref].open()" :key="index">
+                        <div slot="header">{{ participant.name}}
                         </div>
-                        <v-card>
+                        <v-card flat>
                             <v-card-text>
                                 <v-data-table
                                         :headers="headers"
-                                        :items="getParticipantByDate(date)"
+                                        :items="getParticipantArray(participant)"
                                         hide-actions
-                                        item-key="cpfPart"
-                                        class="elevation-1"
-                                        no-data-text="Ninguem para este dia"
                                 >
                                     <template slot="items" slot-scope="props">
                                         <tr @click="props.expanded = !props.expanded">
-                                            <td>{{ props.item.participant.name }}</td>
-                                            <td>{{ props.item.participant.responsable.name_resp }}</td>
-                                            <td>{{ props.item.participant.age }}</td>
-                                            <td>{{ props.item.period }}</td>
+                                            <td>{{ props.item.email }}</td>
+                                            <td>{{ props.item.cpf }}</td>
+                                            <td>{{ props.item.address }}</td>
+                                            <td>{{ props.item.modality }}</td>
+                                            <td>{{ props.item.questionOne }}</td>
+                                            <td>{{ props.item.questionTwo }}</td>
+                                            <td>{{ props.item.telephone }}</td>
+                                            <td>{{ props.item.transaction_code }}</td>
+                                            <td>{{ props.item.transaction_status }}</td>
                                         </tr>
                                     </template>
                                     <template slot="expand" slot-scope="props">
                                         <v-card flat>
                                             <v-card-text>
-                                                <span>Responsável: {{props.item.participant.responsable.name_resp }}</span><br>
-                                                <span>CPF: {{props.item.participant.responsable.cpf }}</span><br>
-                                                <span>E-mail: {{props.item.participant.responsable.email }}</span><br>
-                                                <span>Celular: {{props.item.participant.responsable.celphone }}</span><br>
-                                                <span>Telefone: {{props.item.participant.responsable.tel}}</span>
+                                                <!--<span>Responsável: {{props.item.participant.responsable.name_resp }}</span><br>-->
+                                                <!--<span>CPF: {{props.item.participant.responsable.cpf }}</span><br>-->
+                                                <!--<span>E-mail: {{props.item.participant.responsable.email }}</span><br>-->
+                                                <!--<span>Celular: {{props.item.participant.responsable.celphone }}</span><br>-->
+                                                <!--<span>Telefone: {{props.item.participant.responsable.tel}}</span>-->
                                             </v-card-text>
                                         </v-card>
                                     </template>
@@ -54,7 +55,24 @@
 
     export default {
         data() {
-            return {}
+            return {
+                headers: [
+                    {
+                        text: 'Email',
+                        align: 'left',
+                        value: 'email'
+                    },
+                    { text: 'CPF', value: 'cpf' },
+                    { text: 'Endereço', value: 'address' },
+                    { text: 'Modalidade', value: 'modality' },
+                    { text: 'Questão 1', value: 'questionOne' },
+                    { text: 'Questão 2', value: 'questionTwo' },
+                    { text: 'Telefone', value: 'telephone' },
+                    { text: 'Código da transação no PagSeguro', value: 'transaction_code' },
+                    { text: 'Estado da transação', value: 'transaction_status' },
+
+                ],
+            }
         },
         computed: {
             participants() {
@@ -67,9 +85,15 @@
                     this.$router.replace('login')
                 })
             },
+            getParticipantArray(participant) {
+                let array = [participant]
+                return array
+            }
         },
         beforeMount() {
-            this.$store.dispatch('LoadEventsParticipants')
+            this.$store.dispatch('LoadEventsParticipants').then((data) => {
+                // this.participants = data
+            })
         }
     }
 </script>
