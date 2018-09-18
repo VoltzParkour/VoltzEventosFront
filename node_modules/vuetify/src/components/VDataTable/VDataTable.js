@@ -14,19 +14,11 @@ import {
 } from '../../util/helpers'
 
 // Importing does not work properly
-const VTableOverflow = createSimpleFunctional('table__overflow')
+const VTableOverflow = createSimpleFunctional('v-table__overflow')
 
+/* @vue/component */
 export default {
   name: 'v-data-table',
-
-  data () {
-    return {
-      actionsClasses: 'datatable__actions',
-      actionsRangeControlsClasses: 'datatable__actions__range-controls',
-      actionsSelectClasses: 'datatable__actions__select',
-      actionsPaginationClasses: 'datatable__actions__pagination'
-    }
-  },
 
   mixins: [DataIterable, Head, Body, Foot, Progress],
 
@@ -35,14 +27,21 @@ export default {
       type: Array,
       default: () => []
     },
+    headersLength: {
+      type: Number
+    },
     headerText: {
       type: String,
       default: 'text'
     },
+    headerKey: {
+      type: String,
+      default: null
+    },
     hideHeaders: Boolean,
     rowsPerPageText: {
       type: String,
-      default: 'Rows per page:'
+      default: '$vuetify.dataTable.rowsPerPageText'
     },
     customFilter: {
       type: Function,
@@ -57,29 +56,28 @@ export default {
     }
   },
 
+  data () {
+    return {
+      actionsClasses: 'v-datatable__actions',
+      actionsRangeControlsClasses: 'v-datatable__actions__range-controls',
+      actionsSelectClasses: 'v-datatable__actions__select',
+      actionsPaginationClasses: 'v-datatable__actions__pagination'
+    }
+  },
+
   computed: {
     classes () {
       return {
-        'datatable table': true,
-        'datatable--select-all': this.selectAll !== false,
-        'theme--dark': this.dark,
-        'theme--light': this.light
+        'v-datatable v-table': true,
+        'v-datatable--select-all': this.selectAll !== false,
+        ...this.themeClasses
       }
     },
     filteredItems () {
       return this.filteredItemsImpl(this.headers)
     },
     headerColumns () {
-      return this.headers.length + (this.selectAll !== false)
-    }
-  },
-
-  methods: {
-    hasTag (elements, tag) {
-      return Array.isArray(elements) && elements.find(e => e.tag === tag)
-    },
-    genTR (children, data = {}) {
-      return this.$createElement('tr', data, children)
+      return this.headersLength || this.headers.length + (this.selectAll !== false)
     }
   },
 
@@ -93,6 +91,15 @@ export default {
       : null
 
     this.initPagination()
+  },
+
+  methods: {
+    hasTag (elements, tag) {
+      return Array.isArray(elements) && elements.find(e => e.tag === tag)
+    },
+    genTR (children, data = {}) {
+      return this.$createElement('tr', data, children)
+    }
   },
 
   render (h) {
