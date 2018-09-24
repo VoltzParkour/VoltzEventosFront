@@ -772,6 +772,12 @@
 
                 this.$store.dispatch('requestPayPalCardTransaction', payload).then(
                     response => {
+                        if (response.transactionCode === undefined) {
+                            this.loading = false
+                            this.paymentResult = false
+                            this.resultText = 'Houve um erro ao processar o seu pagamento, verifique os dados do cartão e tente novamente'
+                            return
+                        }
                         this.$emit('paymentRequested', {code: response.transactionCode})
                         this.loading = false
                         this.paymentResult = true
@@ -781,7 +787,7 @@
                 ).catch(error => {
                     this.loading = false
                     this.paymentResult = false
-                    this.resultText = 'Houve um erro ao processar o seu pagamento, tentar novamente mais tarde'
+                    this.resultText = 'Houve um erro ao processar o seu pagamento, verifique os dados do cartão e tente novamente'
                 })
             },
             onBackDialog() {
