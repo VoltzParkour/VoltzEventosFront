@@ -4,6 +4,8 @@ import Home from '@/components/Home'
 import Detail from '@/components/client/Detail'
 import AdminHome from '@/components/admin/Home'
 import Timer from '@/components/Timer'
+import BoletoPage from '@/components/client/BoletoPage'
+
 // import ColonyForm from '@/components/admin/ColonyForm'
 // import AdminAddForm from '@/components/admin/AdminAddForm'
 // import AdminSelectPlans from '@/components/admin/AdminSelectPlans'
@@ -27,6 +29,14 @@ let router = new Router({
             path: '/detalhes',
             name: 'Detail',
             component: Detail
+        },
+        {
+            path: '/boleto',
+            name: 'Boleto',
+            component: BoletoPage,
+            props: (route) => {
+                amount: route.query.amount
+            }
         },
         {
           path: '/admin',
