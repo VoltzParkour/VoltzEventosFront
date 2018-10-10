@@ -12,10 +12,10 @@
                 </v-card>
 
                 <v-card>
-                    <!--<v-card-text>-->
-                        <!--<span class="display-1">R$ </span>-->
-                        <!--<span class="primary&#45;&#45;text display-1"> {{selectedEvent.price}} </span>-->
-                    <!--</v-card-text>-->
+                    <v-card-text>
+                        <span>Valor da inscrição: R$ </span>
+                        <span class="primary--text"> {{selectedEvent.price}} </span>
+                    </v-card-text>
                         <v-btn class="primary ma-3" @click.native="$router.push('/carrinho')">
                             Inscrever-se Aqui!!
                         </v-btn>
