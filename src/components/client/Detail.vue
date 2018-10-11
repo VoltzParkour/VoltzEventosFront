@@ -13,7 +13,7 @@
 
                 <v-card>
                     <v-card-text>
-                        <span>Valor da inscrição: R$ </span>
+                        <span>Taxa de inscrição: R$ </span>
                         <span class="primary--text"> {{selectedEvent.price}} </span>
                     </v-card-text>
                         <v-btn class="primary ma-3" @click.native="$router.push('/carrinho')">

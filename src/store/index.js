@@ -147,31 +147,42 @@ export const store = new Vuex.Store({
             {
                 title: 'Oficina Voltz Kids 2018',
                 image: 'https://firebasestorage.googleapis.com/v0/b/coloniaferiasvoltz.appspot.com/o/assets%2FLogoVoltzKids-2-min.jpg?alt=media&token=25869753-38d7-4e75-97cf-13ae5125061f',
-                text: 'Está chegando a grande dia da Oficina Voltz Kids, dia 12 de outubro.<br/>' +
+                text: 'Está chegando a grande data do Desafio Voltz Kids, dia 12 de outubro.<br/>' +
+                '<br/>' +
+                        'As inscrições já estão abertas aluno ou não da Voltz pode participar!<br/>' +
                     '<br/>' +
-                    'As inscrições já estão abertas. Sendo aluno ou não da Voltz você pode participar!<br/>' +
-                    '<br/>' +
-                    'Data da oficina:<br/>' +
+                    'Data da competição:<br/>' +
                     'Sexta, dia 12 de outubro de 2018<br/>' +
-                    'Horário: das 09h às 12h50<br/>' +
+                    'Horário: das 09h às 18h<br/>' +
                     '<br/>' +
                     'Local: ESPAÇO VOLTZ PARKOUR<br/>' +
                     'Rua Lopes Quintas, 274, Jardim Botânico, Rio de Janeiro, RJ.<br/>' +
                     'Galpão localizado dentro do Colégio Divina Providência<br/>' +
                     '<br/>' +
-                    '<br/>' +
-                    'Venha participar da Oficina de parkour, street dance, freerunning, slackline, acrobacia aérea e trampolim.<br/>' +
+                    'Venha participar do Desafio Voltz Kids com oficinas de parkour, street dance, freerunning, slackline, acrobacia aérea e trampolim.<br/>' +
                     '<br/>' +
                     'Além de muita diversão na competição infantil e infanto-juvenil.<br/>' +
                     '<br/>' +
-                    'ATÉ 15 anos de idade.<br/>' +
+                    'Horários oficina Voltz Parkour<br/>' +
+                    '(Apenas 20 vagas por turma!)<br/>' +
                     '<br/>' +
-                    'Se você tem mais de 15 anos não desanime, você pode participar do Desafio Voltz Parkour 2018.<br/>' +
+                    '1- 9h as 9:50<br/>' +
+                    '2- 10h as 10:50<br/>' +
+                    '3- 11h as 11:50<br/>' +
+                    '4- 12h as 12:50<br/>' +
+                    '<br/>' +
+                    'Na parte da tarde teremos o DESAFIO VOLTZ KIDS<br/>' +
+                    'De 14:30 até 18:30.<br/>' +
+                    '<br/>' +
+                    'Faixa etária:<br/>' +
+                    'De 6 a 15 anos.<br/>' +
+                    '<br/>' +
+                    'Se você te mais de 15 anos não desanime, você pode participar do Desafio Voltz Parkour 2018.<br/>' +
                     '<br/>' +
                     'As inscrições também podem ser feitas no local<br/>' +
                     '<br/>' +
-                    'Venha participar !',
-                price: 30.00,
+                    'Venha participar !!',
+                price: 100.00,
                 firebaseBranch: 'oficina',
                 props: {
                     'name': {
