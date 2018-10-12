@@ -181,7 +181,14 @@ export const store = new Vuex.Store({
                     '<br/>' +
                     'As inscrições também podem ser feitas no local<br/>' +
                     '<br/>' +
-                    'Venha participar !!',
+                    'Venha participar !!' +
+                    'Na área externa:<br/>' +
+                    'OFICINA DE ARTE – Gratuita!<br/>' +
+                    'Ministrada por Helen Pomposelli.  Não perca!<br/>' +
+                    '<br/>' +
+                    'Na área externa também teremos:<br/>' +
+                    'Varias barraquinhas vendendo: açaí, sorvete, sacolé, guaracamp e varias outras guloseimas.<br/>' +
+                    'Area de convivencia, musica e muitas surpresas ao longo do dia!',
                 price: 100.00,
                 firebaseBranch: 'oficina',
                 props: {
